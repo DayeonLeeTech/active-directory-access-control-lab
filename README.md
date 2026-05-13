@@ -57,3 +57,41 @@ The objective of this phase was to deploy the necessary virtual infrastructure i
 </p>
 
 ---
+
+## Part 2: Domain Integration & Automated User Provisioning
+
+The focus of this phase was to establish a secure connection between the client workstation and the domain, followed by using automation to simulate a high-density corporate environment.
+
+### 1. Network Synchronization & Domain Join
+* **DNS Configuration:** Modified the DNS settings on the Client-1 workstation to point directly to the Domain Controller’s private IP. This step was critical for the client to resolve the `mydomain.com` forest name.
+* **Workstation Integration:** Joined Client-1 to the domain using administrative credentials. Successful integration was verified by locating the computer object within the newly created `_CLIENTS` Organizational Unit in ADUC.
+
+<p align="center">
+  <img src="assets/domain-identity_verification.png" width="800">
+  <br>
+  <i>Figure 5: Verification of the workstation joining the domain and proper DNS resolution.</i>
+</p>
+
+### 2. Remote Desktop Protocol (RDP) Configuration
+* **Access Control:** Enabled Remote Desktop on the client workstation and granted "Domain Users" permission to log in. 
+* **User Accessibility:** This adjustment transitioned the system from restricted local access to a flexible model where non-administrative employees can access their environment from other network nodes.
+
+<p align="center">
+  <img src="assets/connectivity_verification.png" width="800">
+  <br>
+  <i>Figure 6: Connectivity testing and RDP configuration for domain-wide accessibility.</i>
+</p>
+
+### 3. PowerShell Automation & Bulk Provisioning
+* **Scripted Scalability:** Executed a PowerShell script to automate the creation of several thousand user accounts. Using automated scripts ensures consistency and eliminates human error during large-scale deployments.
+* **Environment Stress Testing:** Populating the `_EMPLOYEES` OU with high-volume data provides a realistic environment for testing search performance, group policies, and administrative workflows.
+
+<p align="center">
+  <img src="assets/powershell-automation-results.png" width="800">
+  <br>
+  <i>Figure 7: Execution of the PowerShell script and observation of bulk account creation in Active Directory.</i>
+</p>
+
+---
+
+
