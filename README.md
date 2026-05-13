@@ -83,8 +83,8 @@ The focus of this phase was to establish a secure connection between the client 
 </p>
 
 ### 3. PowerShell Automation & Bulk Provisioning
-* **Scripted Scalability:** Executed a PowerShell script to automate the creation of several thousand user accounts. Using automated scripts ensures consistency and eliminates human error during large-scale deployments.
-* **Environment Stress Testing:** Populating the `_EMPLOYEES` OU with high-volume data provides a realistic environment for testing search performance, group policies, and administrative workflows.
+* **Scripted Scalability:** Utilized custom [PowerShell Automation Scripts](https://github.com/DayeonLeeTech/active-directory-home-lab-VirtualBox/tree/main/scripts) to generate high-volume user objects within the directory. Automated provisioning ensures data consistency and eliminates the manual overhead associated with enterprise-scale deployments.
+* **Environment Stress Testing:** By populating the `_EMPLOYEES` OU with thousands of accounts, the environment was prepared for realistic testing of search performance, Group Policy application, and security auditing.
 
 <p align="center">
   <img src="assets/powershell-automation-results.png" width="800">
