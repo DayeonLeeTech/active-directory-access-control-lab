@@ -21,3 +21,39 @@ This project demonstrates the deployment and configuration of a functional Windo
 * **Logging & Monitoring:** Analyzing Event Viewer logs on both the Domain Controller and Client for security auditing.
 
 ---
+
+## Part 1: Infrastructure Deployment & Active Directory Setup
+
+The objective of this phase was to deploy the necessary virtual infrastructure in Azure and establish the primary Domain Controller to manage identity and access for the environment.
+
+### 1. Cloud Networking & Instance Provisioning
+* **Virtual Network Configuration:** Established a dedicated Resource Group and Virtual Network (VNet) to facilitate private communication between cloud assets.
+* **IP Addressing:** Configured a **Static Private IP address** for the Domain Controller's Network Interface Card (NIC) to ensure persistent DNS availability for the client workstation.
+
+<p align="center">
+  <img src="assets/azure-vnet-topology.png" width="800">
+  <br>
+  <i>Figure 2: Logical topology of the Virtual Network and Subnet configuration in Azure.</i>
+</p>
+
+### 2. Domain Controller Promotion
+* **Role Installation:** Deployed **Active Directory Domain Services (AD DS)** on DC-1 (Windows Server 2022) to serve as the centralized authentication authority.
+* **Forest Creation:** Promoted the server to a Domain Controller for the `mydomain.com` forest, initializing the directory database and core identity services.
+
+<p align="center">
+  <img src="assets/ad-dc-verification.png" width="800">
+  <br>
+  <i>Figure 3: Verification of Active Directory Domain Services installation and forest health.</i>
+</p>
+
+### 3. Administrative Hierarchy & Identity Management
+* **OU Structure:** Designed an Organizational Unit (OU) hierarchy including `_EMPLOYEES` and `_ADMINS` to facilitate efficient object management and Group Policy application.
+* **Administrative Provisioning:** Created a dedicated Domain Admin account (`jane_admin`), adhering to the professional standard of using named administrative accounts rather than built-in local accounts.
+
+<p align="center">
+  <img src="assets/ad-structure-and-admin.png" width="800">
+  <br>
+  <i>Figure 4: Organizational Unit (OU) layout and Domain Admin account provisioning in ADUC.</i>
+</p>
+
+---
