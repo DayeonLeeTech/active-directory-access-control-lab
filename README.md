@@ -94,4 +94,34 @@ The focus of this phase was to establish a secure connection between the client 
 
 ---
 
+## Part 3: Security Policy Enforcement & Account Security
+
+This phase involved configuring defensive security controls to protect against common attack vectors and observing how the system responds to unauthorized access attempts.
+
+### 1. Account Lockout Policy Implementation
+* **Group Policy Configuration:** Utilized the Group Policy Management Editor to establish a formal **Account Lockout Policy**. The "Account lockout threshold" was set to 5 attempts, ensuring that a brute-force attack would be stopped automatically.
+* **Security Hardening:** By enforcing these rules at the domain level, the organization ensures a consistent security posture across all workstations, preventing attackers from making unlimited password guesses.
+
+<p align="center">
+  <img src="assets/gpo-security-configuration.png" width="800">
+  <br>
+  <i>Figure 8: Configuring the Account Lockout Threshold via Group Policy Objects.</i>
+</p>
+
+### 2. Brute-Force Simulation & Verification
+* **Triggering Lockouts:** Conducted a test by intentionally entering incorrect passwords for a target user account. After the sixth failed attempt, the system successfully denied further access, confirming that the GPO was active and functional.
+* **Active Directory Observation:** Verified the status of the locked account within **Active Directory Users and Computers**, observing the "Unlock account" flag was triggered as expected.
+
+<p align="center">
+  <img src="assets/secuirty-policy-vertification.png" width="800">
+  <br>
+  <i>Figure 9: Observing a locked-out user state and performing a manual account unlock.</i>
+</p>
+
+### 3. Identity State Management
+* **Account Disabling:** Practiced the standard security procedure of disabling an account to immediately revoke access without deleting the user's data. This is a common workflow for employee offboarding or during active security incidents.
+* **Audit Trail Observation:** Analyzed the error messages presented to the user during disabled or locked states, noting how these events are captured within the Domain Controller's logs for future auditing.
+
+---
+
 
