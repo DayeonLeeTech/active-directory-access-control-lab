@@ -113,7 +113,7 @@ This phase involved configuring defensive security controls to protect against c
 * **Active Directory Observation:** Verified the status of the locked account within **Active Directory Users and Computers**, observing the "Unlock account" flag was triggered as expected.
 
 <p align="center">
-  <img src="assets/secuirty-policy-vertification.png" width="800">
+  <img src="assets/security-policy-verification.png" width="800">
   <br>
   <i>Figure 9: Observing a locked-out user state and performing a manual account unlock.</i>
 </p>
