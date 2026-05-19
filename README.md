@@ -67,7 +67,7 @@ The focus of this phase was to establish a secure connection between the client 
 * **Workstation Integration:** Joined Client-1 to the domain using administrative credentials. Successful integration was verified by locating the computer object within the newly created `_CLIENTS` Organizational Unit in ADUC.
 
 <p align="center">
-  <img src="assets/domain-identity_verification.png" width="800">
+  <img src="assets/domain-identity-verification.png" width="800">
   <br>
   <i>Figure 5: Verification of the workstation joining the domain and proper DNS resolution.</i>
 </p>
